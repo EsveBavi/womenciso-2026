@@ -3,9 +3,17 @@ import './Hero.css'
 const Hero = () => {
   return (
     <section className="hero" id="inicio">
-      <video className="hero-video" autoPlay muted loop playsInline>
-        <source src="/Iniciovideo.mp4" type="video/mp4" />
-      </video>
+      <div className="hero-video-wrapper">
+        <iframe
+          className="hero-video"
+          src="https://www.youtube.com/embed/UHR0qZVwwNg?autoplay=1&mute=1&loop=1&playlist=UHR0qZVwwNg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          title="Women CISO Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <div className="hero-overlay"></div>
+      <div className="hero-decorations"></div>
       <div className="hero-content">
         <h1>10,000 Becas AI</h1>
         <div className="hero-stats">Por el trabajo de mis sueños</div>

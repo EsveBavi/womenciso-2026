@@ -20,13 +20,13 @@ function App() {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <Hero />
       <Carrusel />
       <About />
       <Scholarships />
-      <SponsorLevels />
-      <SponsorsDisplay sponsors={sponsorsList} />
+      {/* <SponsorLevels /> */}
+      {/* <SponsorsDisplay sponsors={sponsorsList} /> */}
       <AliadosDisplay aliados={aliadosList} />
       <Recruitment />
       <Speakers />

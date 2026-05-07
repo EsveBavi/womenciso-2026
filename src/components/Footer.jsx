@@ -10,6 +10,9 @@ const Footer = () => {
         </p>
 
         <div className="footer-links">
+          <a href="https://womenciso.com.mx" target="_blank" rel="noopener noreferrer" className="footer-link footer-website">
+            Página Web
+          </a>
           <a href="https://forms.gle/9SZKdnwyHPqkNKm36" target="_blank" rel="noopener noreferrer" className="footer-link">
             Registro Becas
           </a>

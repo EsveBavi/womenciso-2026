@@ -1,0 +1,108 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 2rem;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 60px 50px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  align-items: center;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 320px;
+  scroll-snap-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.5;
+  transform: scale(0.8);
+  cursor: pointer;
+}
+
+.card:hover {
+  opacity: 0.75;
+  transform: scale(0.9);
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  filter: grayscale(30%) brightness(0.95);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  background: transparent;
+  pointer-events: none;
+}
+
+.card.active img {
+  filter: grayscale(0%) brightness(1);
+  box-shadow: 0 20px 50px rgba(156, 39, 176, 0.35);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background: #9C27B0;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.dots span:hover {
+  background: #7B1FA2;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+    margin: 2rem auto 1.5rem;
+  }
+
+  .carousel {
+    gap: 20px;
+    padding: 50px 30px;
+  }
+
+  .card {
+    flex: 0 0 240px;
+  }
+
+  .card img {
+    height: auto;
+    max-height: 350px;
+  }
+}

@@ -162,3 +162,55 @@
     height: 220px;
   }
 }
+
+/* Grid de fotos de speakers */
+.speakers-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.speaker-photo-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid rgba(156, 39, 176, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.15);
+  background: white;
+}
+
+.speaker-photo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.speaker-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .speakers-photos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .speaker-photo-card {
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .speakers-photos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

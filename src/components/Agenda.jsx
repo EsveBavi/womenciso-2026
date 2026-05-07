@@ -1,60 +1,80 @@
 import './Agenda.css'
 
-const Agenda = () => {
-  const agenda = [
-    {
-      day: '📅 Día 1 - 8 Mayo 2026',
-      events: [
-        { time: '9:00 AM', title: 'Keynote: El Futuro de AI en CISO', description: 'Apertura del evento con líderes de la industria tecnológica' },
-        { time: '11:00 AM', title: 'Taller: Threat Hunting Avanzado', description: 'Técnicas prácticas de detección y respuesta a amenazas' },
-        { time: '2:00 PM', title: 'Panel: Mujeres Líderes en Ciberseguridad', description: 'Experiencias, retos y consejos de carrera en el sector' },
-        { time: '4:00 PM', title: 'Networking Session con Sponsors', description: 'Conecta con reclutadores y empresas patrocinadoras' }
-      ]
-    },
-    {
-      day: '📅 Día 2 - 9 Mayo 2026',
-      events: [
-        { time: '9:00 AM', title: 'Workshop: Hacking Devils Academy', description: 'Técnicas de pentesting ético y explotación de vulnerabilidades' },
-        { time: '12:00 PM', title: 'AI Security Masterclass', description: 'Protección de modelos de ML y mitigación de ataques adversarios' },
-        { time: '3:00 PM', title: 'Recruitment Fair', description: 'Entrevistas 1:1 con empresas líderes en tecnología' },
-        { time: '5:00 PM', title: 'Hackathon CISO Challenge', description: 'Competencia práctica de seguridad con premios' }
-      ]
-    },
-    {
-      day: '📅 Día 3 - 10 Mayo 2026',
-      events: [
-        { time: '9:00 AM', title: 'Examen de Certificación AI Security', description: 'Evaluación y entrega de certificados oficiales' },
-        { time: '12:00 PM', title: 'Keynote de Cierre', description: 'Reflexiones sobre el futuro de la mujer en CISO' },
-        { time: '2:00 PM', title: 'After Party & Networking Final', description: 'Celebración y conexiones finales del evento' }
-      ]
-    }
-  ]
+const agendaData = {
+  day1: {
+    date: '8 de Mayo',
+    sessions: [
+      'Google Career Launchpad',
+      'Google AI, Gemini & NotebookLM',
+      'Diseño de Prompts',
+      'Generative AI Leader',
+      'Security New Attacks Simulator',
+      'Mi Camino para llegar a Google',
+      'Panel de Reclutamiento',
+      'Cierre del día'
+    ]
+  },
+  day2: {
+    date: '9 de Mayo',
+    sessions: [
+      'Agent Launchpad',
+      'Como programar su certificación',
+      'Cognitive Agents SOC & Ciberdefensa',
+      'AI Building with Vertex',
+      'AI Ofensiva',
+      'Generative AI Business Leadership',
+      'Panel: Vacantes, Reclutamiento, Como Preparar tu CV y Entrevistas',
+      'Cierre'
+    ]
+  }
+}
 
+const Agenda = () => {
   return (
     <section className="section" id="agenda" style={{ background: 'rgba(30, 58, 138, 0.05)' }}>
-      <h2 className="section-title">Agenda del Evento</h2>
-
-      <div className="timeline">
-        {agenda.map((day, dayIndex) => (
-          <div key={dayIndex} className="timeline-day">
-            <div className="timeline-day-title">{day.day}</div>
-            {day.events.map((event, eventIndex) => (
-              <div key={eventIndex} className="timeline-event">
-                <div className="timeline-time">{event.time}</div>
-                <div className="timeline-content">
-                  <h4>{event.title}</h4>
-                  <p>{event.description}</p>
+      <div className="agenda-container">
+        <h2 className="agenda-title">Agenda del Evento</h2>
+        <div className="agenda-days">
+          <div className="agenda-day">
+            <div className="day-header">
+              <span className="day-icon">📅</span>
+              <h3 className="day-title">{agendaData.day1.date}</h3>
+            </div>
+            <div className="sessions-list">
+              {agendaData.day1.sessions.map((session, index) => (
+                <div key={index} className="session-item">
+                  <span className="session-number">{index + 1}</span>
+                  <span className="session-name">{session}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-
-      <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <a href="https://forms.gle/9SZKdnwyHPqkNKm36" className="btn" target="_blank" rel="noopener noreferrer">
-          Registrarme al Evento
-        </a>
+          <div className="agenda-day">
+            <div className="day-header">
+              <span className="day-icon">📅</span>
+              <h3 className="day-title">{agendaData.day2.date}</h3>
+            </div>
+            <div className="sessions-list">
+              {agendaData.day2.sessions.map((session, index) => (
+                <div key={index} className="session-item">
+                  <span className="session-number">{index + 1}</span>
+                  <span className="session-name">{session}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="video-button-container">
+          <a
+            href="https://youtu.be/5N8j_W4Szzk?si=EmSHjelSRmEt8Pa4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="video-button"
+          >
+            <span className="button-icon">▶️</span>
+            <span>Ver Video de Rutas para Becas</span>
+          </a>
+        </div>
       </div>
     </section>
   )

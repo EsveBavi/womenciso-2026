@@ -1,0 +1,123 @@
+.event-links-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.event-links-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.event-links-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.event-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(145deg, rgba(255, 0, 0, 0.1), rgba(204, 0, 0, 0.05));
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.event-link-card:hover::before {
+  left: 100%;
+}
+
+.event-link-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3);
+}
+
+.event-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(255, 0, 0, 0.3));
+}
+
+.event-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.event-day {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.event-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.event-arrow {
+  font-size: 2rem;
+  color: #FF0000;
+  transition: transform 0.3s ease;
+}
+
+.event-link-card:hover .event-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .event-links-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .event-links-title {
+    font-size: 2rem;
+  }
+
+  .event-links-subtitle {
+    font-size: 1rem;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-link-card {
+    padding: 1.5rem;
+  }
+
+  .event-icon {
+    font-size: 2.5rem;
+  }
+}

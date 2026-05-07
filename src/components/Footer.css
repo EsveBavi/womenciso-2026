@@ -134,6 +134,47 @@
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
+/* Estilo especial para el botón de Página Web */
+.footer-website {
+  background: linear-gradient(135deg, #3B82F6, #9C27B0);
+  color: #ffffff;
+  border-color: #9C27B0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1.2rem 2.5rem;
+  box-shadow:
+    0 10px 35px rgba(59, 130, 246, 0.3),
+    0 0 25px rgba(156, 39, 176, 0.2);
+  animation: websitePulse 3s ease-in-out infinite;
+}
+
+@keyframes websitePulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 35px rgba(59, 130, 246, 0.3),
+      0 0 25px rgba(156, 39, 176, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 10px 35px rgba(59, 130, 246, 0.4),
+      0 0 40px rgba(156, 39, 176, 0.4);
+  }
+}
+
+.footer-website::before {
+  display: none;
+}
+
+.footer-website:hover {
+  background: linear-gradient(135deg, #9C27B0, #FF00FF);
+  border-color: #FF00FF;
+  transform: translateY(-7px) scale(1.08);
+  box-shadow:
+    0 20px 50px rgba(156, 39, 176, 0.5),
+    0 0 50px rgba(255, 0, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
 .footer-contact {
   margin-bottom: 2rem;
 }

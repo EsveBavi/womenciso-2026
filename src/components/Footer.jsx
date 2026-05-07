@@ -41,7 +41,7 @@ const Footer = () => {
 
         <p className="footer-copy">
           © 2026 Women CISO. Todos los derechos reservados.<br />
-          8, 9 y 10 de Mayo 2026 | Ciudad de México, México
+          8 Y 9 de Mayo 2026 | Ciudad de México, México
         </p>
       </div>
     </footer>

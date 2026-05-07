@@ -3,7 +3,7 @@ import './Hero.css'
 const Hero = () => {
   return (
     <section className="hero" id="inicio">
-      <video className="hero-video-bg" autoPlay muted loop playsInline>
+      <video className="hero-video-bg" autoPlay loop playsInline>
         <source src="/VIDEOOFICIAL.mp4" type="video/mp4" />
       </video>
       <div className="hero-overlay"></div>
